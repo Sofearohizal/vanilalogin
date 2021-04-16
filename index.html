@@ -1,25 +1,47 @@
 <html>
-    <head>
-        <title>Login page</title>
-    </head>
-    <body>
-        <h1>Simple Login Page</h1>
-        <form name="login">
-            Username<input type="text" name="userid"/>
-            Password<input type="password" name="pswrd"/>
-            <input type="button" onclick="check(this.form)" value="Login"/>
-            <input type="reset" value="Cancel"/>
-        </form>
-        <script language="javascript">
-            function check(form) { /*function to check userid & password*/
-                /*the following code checkes whether the entered userid and password are matching*/
-                if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd") {
-                    window.open('target.html')/*opens the target page while Id & password matches*/
-                }
-                else {
-                    alert("Error Password or Username")/*displays error message*/
-                }
-            }
-        </script>
-    </body>
+<head>
+<title>Login Page</title>
+</head>
+<body>
+<form name="loginForm" method="post" action="login.php">
+<table width="20%" bgcolor="0099CC" align="center">
+
+<tr>
+<td colspan=2><center><font size=4><b>HTML Login Page</b></font></center></td>
+</tr>
+
+<tr>
+<td>Username:</td>
+<td><input type="text" size=25 name="userid"></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="Password" size=25 name="pwd"></td>
+</tr>
+
+<tr>
+<td ><input type="Reset"></td>
+<td><input type="submit" onclick="return check(this.form)" value="Login"></td>
+</tr>
+
+</table>
+</form>
+<script language="javascript">
+function check(form)
+{
+
+if(form.userid.value == "Testuser " && form.pwd.value == "user123")
+{
+	return true;
+}
+else
+{
+	alert("Error Password or Username")
+	return false;
+}
+}
+</script>
+
+</body>
 </html>
